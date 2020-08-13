@@ -25,16 +25,70 @@
         
             <a  class="navbar-brand mr-auto" href="#"><img src="img/logo.png" class="img-fluid" height="30" width="41"></a>
             <div class="collapse navbar-collapse" id="Navbar">
-            <ul class="navbar-nav mr-auto">
-                <!-- utility class mr-auto right marigin is as amuch as possible-->
-                <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-                <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
-            </ul>
-        </div>
+                <ul class="navbar-nav mr-auto">
+                    <!-- utility class mr-auto right marigin is as amuch as possible-->
+                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-text">
+                <a data-toggle="modal" data-target="#loginModal" >
+                    <span class="fa fa-sign-in fa-lg" ></span>
+                    Login
+                </a>
+                
+            </div>
         </div>  
     </nav>  
+    <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group row">
+
+                       <!-- <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
+                        <div class="col-5 col-md-3">
+                             <input type="tel"class="form-control" id="areacode" name="areacode" placeholder="Area Code">
+                        </div> 
+                        <div class="col-7 col-md-7"> 
+                            <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. Number">
+                        </div> -->
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Email addresscnslkvn</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+            </div>
+          <!--<p>Some text in the modal.</p> -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default bg-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-default bg-primary" >Sign in</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header align-content-center">
@@ -48,7 +102,9 @@
                     </div>
                 </div>    
                 <div class="col-12 col-sm-3  align-self-center">
-                    <button class=" btn btn-sm col-11 bg-warning " onclick="window.location.href='#reserveatable'"><b>Reserve table</b></button>
+                    <a role="button" class=" btn btn-sm col-11 bg-warning nav-link "
+                    data-toggle ="tooltip" data-html="true"  title="Or call us at <br><strong>+852 12345678</strong>" data-placement="bottom" 
+                    href="#reserveatable"><b>Reserve table</b></a>
                 </div>
         </div>
     </header>
@@ -186,6 +242,11 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script >
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();            
+        });
+    </script>
 </body>
 
 </html>
