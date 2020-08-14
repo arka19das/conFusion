@@ -94,13 +94,14 @@ body{
        .modal-title {
     color: $floralwhite-text;
 
-  }
+    }
 
     .close
     {
       color: $floralwhite-text;
        &:hover {
       color: $background-pale !important;
+      }
     }
 
 
