@@ -168,10 +168,10 @@
                         <div class="form-group row">
                             <label for="datetime" class="col-12 col-md-2 col-form-label">Date and Time</label>
                             <div class="col-12 col-md-4">
-                             <input type="text" class="form-control" id="datetime" name="date" placeholder="Date">
+                             <input type="date" class="form-control" id="datetime" name="date" placeholder="Date">
                             </div>
                             <div class="col-12 col-md-4">
-                             <input type="text" class="form-control" id="datetime" name="time" placeholder="Time">
+                             <input type="time" class="form-control" id="datetime" name="time" placeholder="Time">
                             </div>
                              
                         </div> 
@@ -180,7 +180,7 @@
                             <div class=" col-3 col-md-2">
                              <button type="button" class="btn btn-default bg-secondary " data-dismiss="modal"> Cancel </button></div>   
                              <div class=" col-3 col-md-2">
-                             <button type="submit" class="btn btn-default bg-primary " > Sign in </button></div>
+                             <button type="submit" class="btn btn-default bg-primary " > Reserve </button></div>
                         </div>
                         
                 </form>            
@@ -202,13 +202,13 @@
     <div class="container">
         <div class="row row-content">
             <div class="col">
-                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel" data-pause="false">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid"
                                 src="img/uthappizza.png" alt="Uthappizza">
                             <div class="carousel-caption d-none d-md-block">
-                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
+                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
                                 <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry  tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                             </div>
                         </div>
@@ -241,6 +241,12 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    
+                    	<button class="btn btn-danger btn-sm" id="carouselbutton">
+                    		<span class="fa fa-pause"></span>
+                    	</button>
+                    	
+                    
                 </div>
             </div>
         </div>
@@ -295,6 +301,45 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	/*$(document).ready(function(){
+    		$("#mycarousel").carousel({interval:500});
+
+    	})
+    	$("#mycarousel").mouseenter(function(){
+    		$("#mycarousel").carousel("pause");
+    	})
+    	$("#mycarousel").mouseleave(function(){
+    		$("#mycarousel").carousel(options{interval:5000});
+    	})*/
+    	$(document).ready(function () {
+    		// body...
+    		$('#mycarousel').carousel({interval:2000})
+    		/*$("#carousel-pause").click(function(){ 
+    			$('#mycarousel').carousel('pause');
+    		})
+    		$("#carousel-play").click(function(){ 
+    			$('#mycarousel').carousel('cycle');
+    		})*/
+    		$('#carouselbutton').click(function(){
+    			if($('#carouselbutton').children('span').hasClass('fa-pause'))
+    			{
+    				$('#mycarousel').carousel('pause');
+    				$('#carouselbutton').children('span').removeClass('fa-pause');
+    				$('#carouselbutton').children('span').addClass('fa-play');
+    			}
+    			else 
+    			{
+    				$('#mycarousel').carousel('cycle');
+    				$('#carouselbutton').children('span').removeClass('fa-play');
+    				$('#carouselbutton').children('span').addClass('fa-pause');
+    			}
+    		})
+
+    	})
+    	
+    	
+    </script>
     
 </body>
 
