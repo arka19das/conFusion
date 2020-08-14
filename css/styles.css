@@ -49,9 +49,37 @@ body {
   left: 0;
   min-height: 300px;
 }
-#carouselbutton {
+#carouselButton {
   right: 0px;
   position: absolute;
   bottom: 0px;
   z-index: 1;
+}
+.modal-body
+{
+  background-color: #D1C4E9;
+
+}
+.modal-footer
+{
+  background-color: #D1C4E9;
+
+}
+.modal-header
+{
+  background-color: #512DA8;
+}
+.model-header .model-title{
+  color:floralwhite;
+}
+
+
+
+}
+
+.model-header.close
+{
+  color: floralwhite;
+   &:hover {
+      color: $background-pale !important;
 }
